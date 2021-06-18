@@ -9,3 +9,5 @@ This repo has links to some of my early work on web scraping using **beautifulso
 
 - [Simple web scraper](https://github.com/Phrmth/simple-bots/blob/main/web%20scraper.py)
 - [Web scraper with login credentials](https://github.com/Phrmth/simple-bots/blob/main/web%20scraper%202.py)
+- [Google news scraping](https://github.com/Phrmth/simple-bots/blob/main/google_news_scraping.py)
+- [Web scraping through APIs](https://github.com/Phrmth/simple-bots/blob/main/working%20with%20APIs.py)
