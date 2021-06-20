@@ -80,4 +80,4 @@ for url in x:
 text = " ".join(s).encode('utf-8')
 len(text)
 
-print "Extract complete'
+print "Extract complete"
