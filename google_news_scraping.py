@@ -100,7 +100,6 @@ text = ' '.join([word for word in text.split() if word not in (stopwords.words('
 clean_text = re.sub('[^A-Za-z0-9\.]+', ' ', text)
 
 tokenized_text = word_tokenize(clean_text)
-bigrams=list(ngrams(tokenized_text,2))
 
 classified_text = st.tag(tokenized_text)
 
