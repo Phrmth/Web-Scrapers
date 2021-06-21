@@ -112,12 +112,12 @@ for i,j in classified_text:
         check.append(i)
 
 # removing common bankrupcy terms and websites names reporting bankrupcy news
-check_clean = []
+bankrupt_org = []
 
 bankrupcy_terms = ["reuters" , "thestreet", "Bloomberg", "bennett", "Forbes","marklittle (little)","mlive" ,
                    "marketwatch", "Corp", "co", "Co.", "agency","Court", "customer", "District", "Federal","Financial",
                    "Inc.", "Inc","Ltd","Brunswick", "arbor", "Altair", "ann", "arizona" , "Bennett" , "claren road",
                    "claren", "Connecticut", "BIA", "Bankruptcy" ,"CMHC", "COFINA", "ERS", "ABI", "USA", "U.S.A","U.S.", "CBS4","CBS"]
 
-check_clean = [i for i in check if i not in bankrupcy_terms]
-print check_clean
+bankrupt_org = [i for i in check if i not in bankrupcy_terms]
+print bankrupt_org
