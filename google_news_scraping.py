@@ -81,3 +81,44 @@ text = " ".join(s).encode('utf-8')
 len(text)
 
 print "Extract complete"
+
+
+
+## Identifying the organizations names listed under bankrupcy news text using Named Entity Recognition
+
+stem_text = list()
+stanford_classifier = 'c:\stanford\stanford-ner-2016-10-31\classifiers\english.all.3class.distsim.crf.ser.gz'
+stanford_ner_path = 'C:\stanford\stanford-ner-2016-10-31\stanford-ner.jar'
+
+# Creating Tagger Object
+st = StanfordNERTagger(stanford_classifier, stanford_ner_path, encoding='utf-8')
+stemmer = SnowballStemmer("english")
+
+text = ' '.join([word for word in text.split() if word not in (stopwords.words('english'))])
+
+
+clean_text = re.sub('[^A-Za-z0-9\.]+', ' ', text)
+
+tokenized_text = word_tokenize(clean_text)
+bigrams=list(ngrams(tokenized_text,2))
+
+classified_text = st.tag(tokenized_text)
+
+
+# getting only the tokens tagged as Organization
+check = []
+for i,j in classified_text:
+    if j == "ORGANIZATION":
+        i.lower()
+        check.append(i)
+
+# removing common bankrupcy terms and websites names reporting bankrupcy news
+check_clean = []
+
+bankrupcy_terms = ["reuters" , "thestreet", "Bloomberg", "bennett", "Forbes","marklittle (little)","mlive" ,
+                   "marketwatch", "Corp", "co", "Co.", "agency","Court", "customer", "District", "Federal","Financial",
+                   "Inc.", "Inc","Ltd","Brunswick", "arbor", "Altair", "ann", "arizona" , "Bennett" , "claren road",
+                   "claren", "Connecticut", "BIA", "Bankruptcy" ,"CMHC", "COFINA", "ERS", "ABI", "USA", "U.S.A","U.S.", "CBS4","CBS"]
+
+check_clean = [i for i in check if i not in bankrupcy_terms]
+print check_clean
