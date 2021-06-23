@@ -1,5 +1,6 @@
 # simple-bots
-My very initial works on creating very simple bots on **web scrapers**
+
+My very initial works on creating simple bots on **web scrapers**
 
 I have been working on learning python for machine learning, deep learning and web scraping and creating bots .
 
