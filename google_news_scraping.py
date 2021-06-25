@@ -111,7 +111,8 @@ for i,j in classified_text:
         i.lower()
         check.append(i)
 
-# removing common bankrupcy terms and websites names reporting bankrupcy news
+# Note removing common bankrupcy terms and websites names reporting bankrupcy news to get the organizations which could have filed for a chapter 11 bankrupcy,
+
 bankrupt_org = []
 
 bankrupcy_terms = ["reuters" , "thestreet", "Bloomberg", "bennett", "Forbes","marklittle (little)","mlive" ,
@@ -121,3 +122,8 @@ bankrupcy_terms = ["reuters" , "thestreet", "Bloomberg", "bennett", "Forbes","ma
 
 bankrupt_org = [i for i in check if i not in bankrupcy_terms]
 print bankrupt_org
+
+# gives a list of organizations from the scraped text on bankrupcy and applying named entity recognition on the text data. 
+# this is mainly useful in corporate credit risk scenarios where we can proactively check for the organizations status . 
+# Once the organizations are identified, further more deep dive needs to be performed to make a sound decision. 
+# However with this news scraping bot we can narrow down to a list of possible organizations. 
